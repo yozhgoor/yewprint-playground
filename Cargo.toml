@@ -10,6 +10,7 @@ edition = "2018"
 crate-type = ["cdylib"]
 
 [dependencies]
+web-sys = "0.3"
 yew = { git = "https://github.com/yewstack/yew.git", rev = "1507c21b" }
 yewprint = { git = "https://github.com/cecton/yewprint.git", branch = "main" }
 

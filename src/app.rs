@@ -21,6 +21,22 @@ impl Component for App {
     fn view(&self) -> Html {
         html! {
             <div>
+                <div>
+                    <div>
+                        <a href="/">
+                            {crate::include_raw_html!("logo.svg")}
+                        </a>
+                        <div>
+                            {"Yewprint-playground"}
+                        </div>
+                        <a
+                            href="https://github.com/Yozhgoor/yewprint-playground"
+                            target="_blank"
+                        >
+                            <small>{"View on GitHub"}</small>
+                        </a>
+                    </div>
+                </div>
                 <main>
                 </main>
             </div>

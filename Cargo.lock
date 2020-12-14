@@ -2707,6 +2707,7 @@ dependencies = [
  "wasm-bindgen",
  "wasm-bindgen-test",
  "wasm-run",
+ "web-sys",
  "wee_alloc",
  "yew",
  "yewprint",
