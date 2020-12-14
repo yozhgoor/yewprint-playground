@@ -1,5 +1,6 @@
 use crate::nav_menu::*;
 use crate::page::*;
+use crate::test::*;
 use yew::prelude::*;
 use yew_router::router::Router;
 
@@ -50,6 +51,7 @@ impl Component for App {
                                 match switch {
                                     AppMenu::Page | AppMenu::Home =>
                                         html! (<Page />),
+                                    AppMenu::Test => html! (<Test />),
                                 }
                             })
                         />

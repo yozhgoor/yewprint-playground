@@ -49,6 +49,12 @@ impl Component for NavMenu {
                         onclick=self.link
                             .callback(|_| Msg::GoToMenu(AppMenu::Page))
                     />
+                    <MenuItem
+                        text={html!("Test")}
+                        href="#test"
+                        onclick=self.link
+                            .callback(|_| Msg::GoToMenu(AppMenu::Test))
+                    />
                 </Menu>
                 <Button
                     class="nav-button"
@@ -65,6 +71,8 @@ impl Component for NavMenu {
 pub enum AppMenu {
     #[to = "/#page"]
     Page,
+    #[to = "/#test"]
+    Test,
     #[to = "/"]
     Home,
 }
