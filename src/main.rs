@@ -1,12 +1,13 @@
 use anyhow::Result;
 use notify::{RecursiveMode, Watcher};
-use std::{collections::HashSet, iter::FromIterator, process::Command};
+use std::{collections::HashSet, fs, iter::FromIterator, process::Command};
 use structopt::StructOpt;
 use wasm_run::prelude::*;
 
 #[wasm_run::main(
     pre_build = pre_build,
     watch = watch,
+    post_build = post_build,
 )]
 #[derive(StructOpt, Debug)]
 enum Cli {}
@@ -38,6 +39,21 @@ fn watch(args: &DefaultServeArgs, watcher: &mut RecommendedWatcher) -> Result<()
             RecursiveMode::Recursive,
         );
     }
+
+    Ok(())
+}
+
+fn post_build(
+    _args: &DefaultBuildArgs,
+    _profile: BuildProfile,
+    _wasm_js: String,
+    _wasm_bin: Vec<u8>,
+) -> Result<(), anyhow::Error> {
+    fs::write("build/app.js", _wasm_js)?;
+    fs::write("build/app_bg.wasm", _wasm_bin)?;
+    fs::copy("static/blueprint.css", "build/blueprint.css")?;
+    fs::copy("static/index.html", "build/index.html")?;
+    fs::copy("static/logo_512.png", "build/logo_512.png")?;
 
     Ok(())
 }
