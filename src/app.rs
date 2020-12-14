@@ -43,13 +43,13 @@ impl Component for App {
                         <NavMenu />
                     </div>
                 </div>
-                <main>
-                    <div class="app-content" role="main">
+                <main class="app-content" role="main">
+                    <div>
                         <Router<AppMenu, ()>
                             render=Router::render(|switch: AppMenu| {
                                 match switch {
                                     AppMenu::Page | AppMenu::Home =>
-                                    html! (<Page />),
+                                        html! (<Page />),
                                 }
                             })
                         />
