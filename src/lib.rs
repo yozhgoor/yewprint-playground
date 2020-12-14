@@ -2,6 +2,7 @@
 
 mod app;
 mod nav_menu;
+mod page;
 
 pub use app::*;
 use wasm_bindgen::prelude::*;
