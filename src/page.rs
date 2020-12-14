@@ -1,4 +1,5 @@
 use yew::prelude::*;
+use yewprint::{Button, IconName, InputGroup};
 
 pub struct Page {}
 
@@ -21,7 +22,16 @@ impl Component for Page {
     fn view(&self) -> Html {
         html! {
             <div>
-                {"Hello world"}
+                <InputGroup
+                    round=true
+                    placeholder={"Search..."}
+                    right_element=html! {
+                        <Button
+                            icon=IconName::Search
+                            minimal=true
+                        />
+                    }
+                />
             </div>
         }
     }
