@@ -1,5 +1,8 @@
 #![cfg(target_arch = "wasm32")]
 
+mod app;
+
+pub use app::*;
 use wasm_bindgen::prelude::*;
 
 // When the `wee_alloc` feature is enabled, use `wee_alloc` as the global
@@ -18,7 +21,7 @@ extern "C" {
 pub fn run_app() -> Result<(), JsValue> {
     #[cfg(feature = "console_error_panic_hook")]
     console_error_panic_hook::set_once();
-
+    yew::start_app::<app::App>();
     log("Hello World!");
 
     Ok(())
