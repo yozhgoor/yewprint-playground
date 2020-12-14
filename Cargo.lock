@@ -1263,6 +1263,19 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "3576a87f2ba00f6f106fdfcd16db1d698d648a26ad8e0573cad8537c3c362d2a"
 
 [[package]]
+name = "lexical-core"
+version = "0.7.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "db65c6da02e61f55dae90a0ae427b2a5f6b3e8db09f58d10efab23af92592616"
+dependencies = [
+ "arrayvec",
+ "bitflags",
+ "cfg-if 0.1.10",
+ "ryu",
+ "static_assertions",
+]
+
+[[package]]
 name = "libc"
 version = "0.2.81"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1369,6 +1382,17 @@ dependencies = [
  "cfg-if 0.1.10",
  "libc",
  "winapi 0.3.9",
+]
+
+[[package]]
+name = "nom"
+version = "5.1.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "ffb4262d26ed83a1c0a33a38fe2bb15797329c85770da05e6b828ddb782627af"
+dependencies = [
+ "lexical-core",
+ "memchr",
+ "version_check",
 ]
 
 [[package]]
@@ -1900,6 +1924,12 @@ checksum = "cf906c8b8fc3f6ecd1046e01da1d8ddec83e48c8b08b84dcc02b585a6bedf5a8"
 dependencies = [
  "version_check",
 ]
+
+[[package]]
+name = "static_assertions"
+version = "1.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "a2eb9349b6444b326872e140eb1cf5e7c522154d69e7a0ffb0fb81c06b37543f"
 
 [[package]]
 name = "stdweb"
@@ -2685,6 +2715,45 @@ dependencies = [
 ]
 
 [[package]]
+name = "yew-router"
+version = "0.14.0"
+source = "git+https://github.com/yewstack/yew.git?rev=1507c21b#1507c21b39e7941f7b9fe8ff5af792cf55be1f6f"
+dependencies = [
+ "cfg-if 0.1.10",
+ "cfg-match",
+ "gloo",
+ "js-sys",
+ "log",
+ "nom",
+ "serde",
+ "serde_json",
+ "wasm-bindgen",
+ "web-sys",
+ "yew",
+ "yew-router-macro",
+ "yew-router-route-parser",
+]
+
+[[package]]
+name = "yew-router-macro"
+version = "0.14.0"
+source = "git+https://github.com/yewstack/yew.git?rev=1507c21b#1507c21b39e7941f7b9fe8ff5af792cf55be1f6f"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn",
+ "yew-router-route-parser",
+]
+
+[[package]]
+name = "yew-router-route-parser"
+version = "0.14.0"
+source = "git+https://github.com/yewstack/yew.git?rev=1507c21b#1507c21b39e7941f7b9fe8ff5af792cf55be1f6f"
+dependencies = [
+ "nom",
+]
+
+[[package]]
 name = "yewprint"
 version = "0.1.0"
 source = "git+https://github.com/cecton/yewprint.git?branch=main#294be851041301146b7720a0e710827e47409a37"
@@ -2710,6 +2779,7 @@ dependencies = [
  "web-sys",
  "wee_alloc",
  "yew",
+ "yew-router",
  "yewprint",
 ]
 
