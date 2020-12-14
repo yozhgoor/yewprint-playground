@@ -33,3 +33,11 @@ body{
     padding: 20px;
     background-color: #293641;
 }
+
+.nav-button{
+    margin-top: 30%;
+}
+
+.page-search{
+    width: 30%;
+}

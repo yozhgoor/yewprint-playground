@@ -50,7 +50,10 @@ impl Component for NavMenu {
                             .callback(|_| Msg::GoToMenu(AppMenu::Page))
                     />
                 </Menu>
-                <Button fill=true>
+                <Button
+                    class="nav-button"
+                    fill=true
+                >
                     {"Ready?"}
                 </Button>
             </div>

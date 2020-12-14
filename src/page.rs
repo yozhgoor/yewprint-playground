@@ -21,7 +21,7 @@ impl Component for Page {
 
     fn view(&self) -> Html {
         html! {
-            <div>
+            <div class="page-search">
                 <InputGroup
                     round=true
                     placeholder={"Search..."}
