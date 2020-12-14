@@ -1,3 +1,4 @@
+use crate::nav_menu::*;
 use yew::prelude::*;
 
 pub struct App {}
@@ -6,7 +7,7 @@ impl Component for App {
     type Message = ();
     type Properties = ();
 
-    fn create(_: Self::Properties, _link: ComponentLink<Self>) -> Self {
+    fn create(_props: Self::Properties, _link: ComponentLink<Self>) -> Self {
         App {}
     }
 
@@ -35,6 +36,9 @@ impl Component for App {
                         >
                             <small>{"View on GitHub"}</small>
                         </a>
+                    </div>
+                    <div>
+                        <NavMenu />
                     </div>
                 </div>
                 <main>

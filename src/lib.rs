@@ -1,6 +1,7 @@
 #![cfg(target_arch = "wasm32")]
 
 mod app;
+mod nav_menu;
 
 pub use app::*;
 use wasm_bindgen::prelude::*;
