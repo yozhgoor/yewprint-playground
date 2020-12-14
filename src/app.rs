@@ -23,10 +23,10 @@ impl Component for App {
 
     fn view(&self) -> Html {
         html! {
-            <div>
-                <div>
-                    <div>
-                        <a href="/">
+            <div class="app-root bp3-dark">
+                <div class="app-nav">
+                    <div class="app-nav-header">
+                        <a class="app-logo" href="/">
                             {crate::include_raw_html!("logo.svg")}
                         </a>
                         <div>
@@ -44,7 +44,7 @@ impl Component for App {
                     </div>
                 </div>
                 <main>
-                    <div>
+                    <div class="app-content" role="main">
                         <Router<AppMenu, ()>
                             render=Router::render(|switch: AppMenu| {
                                 match switch {
