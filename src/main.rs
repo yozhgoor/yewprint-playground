@@ -51,6 +51,7 @@ fn post_build(
 ) -> Result<(), anyhow::Error> {
     fs::write("build/app.js", _wasm_js)?;
     fs::write("build/app_bg.wasm", _wasm_bin)?;
+    fs::copy("static/app.css", "build/app.css")?;
     fs::copy("static/blueprint.css", "build/blueprint.css")?;
     fs::copy("static/index.html", "build/index.html")?;
     fs::copy("static/logo_512.png", "build/logo_512.png")?;
