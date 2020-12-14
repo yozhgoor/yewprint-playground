@@ -1,5 +1,7 @@
 use crate::nav_menu::*;
+use crate::page::*;
 use yew::prelude::*;
+use yew_router::router::Router;
 
 pub struct App {}
 
@@ -42,6 +44,16 @@ impl Component for App {
                     </div>
                 </div>
                 <main>
+                    <div>
+                        <Router<AppMenu, ()>
+                            render=Router::render(|switch: AppMenu| {
+                                match switch {
+                                    AppMenu::Page | AppMenu::Home =>
+                                    html! (<Page />),
+                                }
+                            })
+                        />
+                    </div>
                 </main>
             </div>
         }

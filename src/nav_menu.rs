@@ -1,17 +1,37 @@
 use yew::prelude::*;
+use yew_router::{
+    agent::{RouteAgentDispatcher, RouteRequest},
+    Switch,
+};
 use yewprint::{Menu, MenuItem};
 
-pub struct NavMenu {}
+pub struct NavMenu {
+    link: ComponentLink<Self>,
+    route_dispatcher: RouteAgentDispatcher,
+}
+
+pub enum Msg {
+    GoToMenu(AppMenu),
+}
 
 impl Component for NavMenu {
-    type Message = ();
+    type Message = Msg;
     type Properties = ();
 
-    fn create(_props: Self::Properties, _link: ComponentLink<Self>) -> Self {
-        NavMenu {}
+    fn create(_props: Self::Properties, link: ComponentLink<Self>) -> Self {
+        NavMenu {
+            link,
+            route_dispatcher: RouteAgentDispatcher::new(),
+        }
     }
 
-    fn update(&mut self, _msg: Self::Message) -> ShouldRender {
+    fn update(&mut self, msg: Self::Message) -> ShouldRender {
+        match msg {
+            Msg::GoToMenu(app_menu) => {
+                self.route_dispatcher
+                    .send(RouteRequest::ChangeRoute(app_menu.into()));
+            }
+        }
         true
     }
 
@@ -23,9 +43,22 @@ impl Component for NavMenu {
         html! {
             <div>
                 <Menu>
-                    <MenuItem />
+                    <MenuItem
+                        text={html!("Page")}
+                        href="#page"
+                        onclick=self.link
+                            .callback(|_| Msg::GoToMenu(AppMenu::Page))
+                    />
                 </Menu>
             </div>
         }
     }
+}
+
+#[derive(Debug, Copy, Clone, Switch)]
+pub enum AppMenu {
+    #[to = "/#page"]
+    Page,
+    #[to = "/"]
+    Home,
 }
