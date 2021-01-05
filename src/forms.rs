@@ -1,17 +1,24 @@
 use yew::prelude::*;
-use yewprint::{InputGroup, Switch, Text, H1, H2, H3};
+use yewprint::{HtmlSelect, InputGroup, Switch, Text, H1, H2, H3};
 
-pub struct Forms {}
+pub struct Forms {
+    link: ComponentLink<Self>,
+    ed_level: EdLevel,
+}
 
 impl Component for Forms {
-    type Message = ();
+    type Message = EdLevel;
     type Properties = ();
 
-    fn create(_props: Self::Properties, _link: ComponentLink<Self>) -> Self {
-        Forms {}
+    fn create(_props: Self::Properties, link: ComponentLink<Self>) -> Self {
+        Forms {
+            link,
+            ed_level: EdLevel::Elementary,
+        }
     }
 
-    fn update(&mut self, _msg: Self::Message) -> ShouldRender {
+    fn update(&mut self, msg: Self::Message) -> ShouldRender {
+        self.ed_level = msg;
         true
     }
 
@@ -263,10 +270,65 @@ impl Component for Forms {
                             </div>
                         </div>
                     </div>
+                    <div class="forms-section">
+                        <div class="forms-section-title">
+                            <H2>{"Education"}</H2>
+                        </div>
+                        <div class="forms-section-content">
+                            <div class="forms-education">
+                                <div class="forms-selection">
+                                    <div class="forms-label">
+                                        <Text>{"Education Level"}</Text>
+                                    </div>
+                                    <div class="forms-select">
+                                        <HtmlSelect<EdLevel>
+                                            options={vec![
+                                                (EdLevel::Elementary, "Elementary School".to_string()),
+                                                (EdLevel::Middle, "Middle School".to_string()),
+                                                (EdLevel::High, "High School".to_string()),
+                                                (EdLevel::University, "University/College".to_string()),
+                                            ]}
+                                            value=Some(self.ed_level)
+                                            onchange=self.link.callback(|x| x)
+                                            title=format!("Selected: {:?}", self.ed_level)
+                                        />
+                                    </div>
+                                </div>
+                                <div class="forms-input">
+                                    <div class="forms-label">
+                                        <Text>{"Etablissement"}</Text>
+                                    </div>
+                                    <div class="forms-field">
+                                        <InputGroup
+                                            placeholder={"ex: Harvard University"}
+                                        />
+                                    </div>
+                                </div>
+                                <div class="forms-input">
+                                    <div class="forms-label">
+                                        <Text>{"Last Year"}</Text>
+                                    </div>
+                                    <div class="forms-field">
+                                        <InputGroup
+                                            placeholder={"ex: 2019-2020"}
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class ="forms-footer">
                 </div>
             </div>
         }
     }
+}
+
+#[derive(Debug, Clone, Copy, Hash, PartialEq)]
+pub enum EdLevel {
+    Elementary,
+    Middle,
+    High,
+    University,
 }

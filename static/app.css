@@ -72,6 +72,10 @@ body{
     display: flex;
 }
 
+.forms-education{
+    display: flex;
+}
+
 .forms-input{
     display: flex;
     flex-direction: column;
@@ -84,6 +88,10 @@ body{
 }
 
 .forms-field{
+    margin-right: 25px;
+}
+
+.forms-select{
     margin-right: 25px;
 }
 
