@@ -33,3 +33,56 @@ body{
     padding: 20px;
     background-color: #293641;
 }
+
+.forms-header{
+    border-bottom: 3px Solid grey;
+}
+
+.forms-section{
+    margin-top: 10px;
+}
+
+.forms-section-content{
+    display: flex;
+    flex-direction: column;
+}
+
+.forms-content-title{
+    margin-top: 20px;
+}
+
+.forms-name{
+    display: flex;
+    margin-right: 50px;
+}
+
+.forms-birth{
+    display: flex;
+}
+
+.forms-adress{
+    display: flex;
+}
+
+.forms-location{
+    display: flex;
+}
+
+.forms-contact{
+    display: flex;
+}
+
+.forms-input{
+    display: flex;
+    flex-direction: column;
+}
+
+.forms-label{
+    margin-right: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.forms-field{
+    margin-right: 25px;
+}
