@@ -1,5 +1,5 @@
 use yew::prelude::*;
-use yewprint::{InputGroup, Text, H1, H2, H3};
+use yewprint::{InputGroup, Switch, Text, H1, H2, H3};
 
 pub struct Forms {}
 
@@ -191,6 +191,74 @@ impl Component for Forms {
                                             placeholder={"ex: name@example.com"}
                                         />
                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="forms-horizontal-section">
+                        <div class="first-horizontal-element">
+                            <div class="forms-section-title">
+                                <H2>{"Mode of Transportation"}</H2>
+                            </div>
+                            <div class="forms-section-content">
+                                <div class="forms-transportation">
+                                    <Switch
+                                        label=html!("Foot")
+                                    />
+                                    <Switch
+                                        label=html!("Bicycle")
+                                    />
+                                    <Switch
+                                        label=html!("Car")
+                                    />
+                                    <Switch
+                                        label=html!("Bus")
+                                    />
+                                    <Switch
+                                        label=html!("Train")
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="second-horizontal-element">
+                            <div class="forms-section-title">
+                                <H2>{"Sought Position"}</H2>
+                            </div>
+                            <div class="forms-section-content">
+                                <div class="forms-position">
+                                    <Switch
+                                        label=html!("Worker")
+                                    />
+                                    <Switch
+                                        label=html!("Driver")
+                                    />
+                                    <Switch
+                                        label=html!("Employee")
+                                    />
+                                    <Switch
+                                        label=html!("Secretary")
+                                    />
+                                    <Switch
+                                        label=html!("Executive")
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="third-horizontal-element">
+                            <div class="forms-section-title">
+                                <H2>{"Preferred Schedules"}</H2>
+                            </div>
+                            <div class="forms-section-content">
+                                <div class="forms-schedules">
+                                    <Switch
+                                        label=html!{"Morning (7AM - 3PM)"}
+                                    />
+                                    <Switch
+                                        label=html!{"Day (2PM - 10PM)"}
+                                    />
+                                    <Switch
+                                        label=html!{"Night (9PM - 8AM)"}
+                                    />
                                 </div>
                             </div>
                         </div>

@@ -86,3 +86,16 @@ body{
 .forms-field{
     margin-right: 25px;
 }
+
+.forms-horizontal-section{
+    display: flex;
+    margin-top: 25px;
+}
+
+.second-horizontal-element{
+    margin-left: 50px;
+}
+
+.third-horizontal-element{
+    margin-left: 50px;
+}
