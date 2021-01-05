@@ -36,6 +36,7 @@ body{
 
 .forms-header{
     border-bottom: 3px Solid grey;
+    margin-right: 20%;
 }
 
 .forms-section{
@@ -106,4 +107,16 @@ body{
 
 .third-horizontal-element{
     margin-left: 50px;
+}
+
+.forms-footer{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+    margin-right: 20%;
+    border-top: 1.5px Solid grey;
+}
+
+.forms-button{
+    margin-top: 5px;
 }

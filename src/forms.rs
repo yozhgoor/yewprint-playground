@@ -1,5 +1,5 @@
 use yew::prelude::*;
-use yewprint::{HtmlSelect, InputGroup, Switch, Text, H1, H2, H3};
+use yewprint::{Button, ButtonGroup, HtmlSelect, InputGroup, Switch, Text, H1, H2, H3};
 
 pub struct Forms {
     link: ComponentLink<Self>,
@@ -319,6 +319,16 @@ impl Component for Forms {
                     </div>
                 </div>
                 <div class ="forms-footer">
+                    <div class="forms-button">
+                        <ButtonGroup>
+                            <Button>
+                                {"Cancel"}
+                            </Button>
+                            <Button>
+                                {"Save"}
+                            </Button>
+                        </ButtonGroup>
+                    </div>
                 </div>
             </div>
         }
