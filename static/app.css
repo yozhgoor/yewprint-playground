@@ -120,3 +120,21 @@ body{
 .forms-button{
     margin-top: 5px;
 }
+
+.forms-section-header{
+    display: flex;
+}
+
+.forms-section-icon{
+    margin-top: 6px;
+    margin-right: 6px;
+}
+
+.forms-content-header{
+    display: flex;
+}
+
+.forms-content-icon{
+    margin-top: 22px;
+    margin-right: 10px;
+}

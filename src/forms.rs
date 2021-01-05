@@ -1,5 +1,7 @@
 use yew::prelude::*;
-use yewprint::{Button, ButtonGroup, HtmlSelect, InputGroup, Switch, Text, H1, H2, H3};
+use yewprint::{
+    Button, ButtonGroup, HtmlSelect, Icon, IconName, InputGroup, Switch, Text, H1, H2, H3,
+};
 
 pub struct Forms {
     link: ComponentLink<Self>,
@@ -36,8 +38,13 @@ impl Component for Forms {
                 </div>
                 <div class="forms-main">
                     <div class="forms-section">
-                        <div class="forms-section-title">
-                            <H2>{"User data"}</H2>
+                        <div class="forms-section-header">
+                            <div class="forms-section-icon">
+                                <Icon icon=IconName::People />
+                            </div>
+                            <div class="forms-section-title">
+                                <H2>{"User data"}</H2>
+                            </div>
                         </div>
                         <div class="forms-section-content">
                             <div class="forms-name">
@@ -96,8 +103,13 @@ impl Component for Forms {
                             </div>
                         </div>
                         <div class="forms-section-content">
-                            <div class="forms-content-title">
-                                <H3>{"Adress"}</H3>
+                            <div class="forms-content-header">
+                                <div class="forms-content-icon">
+                                    <Icon icon=IconName::Map />
+                                </div>
+                                <div class="forms-content-title">
+                                    <H3>{"Adress"}</H3>
+                                </div>
                             </div>
                             <div class="forms-adress">
                                 <div class="forms-input">
@@ -175,8 +187,13 @@ impl Component for Forms {
                             </div>
                         </div>
                         <div class="forms-section-content">
-                            <div class="forms-content-title">
-                                <H3>{"Contact"}</H3>
+                            <div class="forms-section-header">
+                                <div class="forms-content-icon">
+                                    <Icon icon=IconName::Phone />
+                                </div>
+                                <div class="forms-content-title">
+                                    <H3>{"Contact"}</H3>
+                                </div>
                             </div>
                             <div class="forms-contact">
                                 <div class="forms-input">
@@ -204,8 +221,13 @@ impl Component for Forms {
                     </div>
                     <div class="forms-horizontal-section">
                         <div class="first-horizontal-element">
-                            <div class="forms-section-title">
-                                <H2>{"Mode of Transportation"}</H2>
+                            <div class="forms-section-header">
+                                <div class="forms-section-icon">
+                                    <Icon icon=IconName::UnknownVehicle />
+                                </div>
+                                <div class="forms-section-title">
+                                    <H2>{"Mode of Transportation"}</H2>
+                                </div>
                             </div>
                             <div class="forms-section-content">
                                 <div class="forms-transportation">
@@ -228,8 +250,13 @@ impl Component for Forms {
                             </div>
                         </div>
                         <div class="second-horizontal-element">
-                            <div class="forms-section-title">
-                                <H2>{"Sought Position"}</H2>
+                            <div class="forms-section-header">
+                                <div class="forms-section-icon">
+                                    <Icon icon=IconName::Office />
+                                </div>
+                                <div class="forms-section-title">
+                                    <H2>{"Sought Position"}</H2>
+                                </div>
                             </div>
                             <div class="forms-section-content">
                                 <div class="forms-position">
@@ -252,8 +279,13 @@ impl Component for Forms {
                             </div>
                         </div>
                         <div class="third-horizontal-element">
-                            <div class="forms-section-title">
-                                <H2>{"Preferred Schedules"}</H2>
+                            <div class="forms-section-header">
+                                <div class="forms-section-icon">
+                                    <Icon icon=IconName::TimelineEvents />
+                                </div>
+                                <div class="forms-section-title">
+                                    <H2>{"Preferred Schedules"}</H2>
+                                </div>
                             </div>
                             <div class="forms-section-content">
                                 <div class="forms-schedules">
@@ -271,8 +303,13 @@ impl Component for Forms {
                         </div>
                     </div>
                     <div class="forms-section">
-                        <div class="forms-section-title">
-                            <H2>{"Education"}</H2>
+                        <div class="forms-section-header">
+                            <div class="forms-section-icon">
+                                <Icon icon=IconName::Learning />
+                            </div>
+                            <div class="forms-section-title">
+                                <H2>{"Education"}</H2>
+                            </div>
                         </div>
                         <div class="forms-section-content">
                             <div class="forms-education">
@@ -321,10 +358,14 @@ impl Component for Forms {
                 <div class ="forms-footer">
                     <div class="forms-button">
                         <ButtonGroup>
-                            <Button>
+                            <Button
+                                icon=IconName::BanCircle
+                            >
                                 {"Cancel"}
                             </Button>
-                            <Button>
+                            <Button
+                                icon=IconName::TickCircle
+                            >
                                 {"Save"}
                             </Button>
                         </ButtonGroup>
