@@ -16,9 +16,9 @@ prebuilt-wasm-opt = [ "wasm-run/prebuilt-wasm-opt" ]
 [target.'cfg(target_arch = "wasm32")'.dependencies]
 wasm-bindgen = "0.2"
 web-sys = "0.3"
-yew = { git = "https://github.com/yewstack/yew.git", rev = "1507c21b" }
+yew = { git = "https://github.com/yewstack/yew.git", rev = "db3170f629f" }
 yewprint = { git = "https://github.com/cecton/yewprint.git", branch = "main" }
-yew-router = { git = "https://github.com/yewstack/yew.git", rev = "1507c21b" }
+yew-router = { git = "https://github.com/yewstack/yew.git", rev = "db3170f629f" }
 
 # The `console_error_panic_hook` crate provides better debugging of panics by
 # logging them with `console.error`. This is great for development, but requires
@@ -34,7 +34,7 @@ console_error_panic_hook = { version = "0.1.6", optional = true }
 wee_alloc = { version = "0.4.5", optional = true }
 
 [target.'cfg(not(target_arch = "wasm32"))'.dependencies]
-wasm-run = { version = "0.7.0", default-features = false, features = [ "serve" ] }
+wasm-run = { version = "0.8.0" }
 structopt = "0.3"
 
 [dev-dependencies]
