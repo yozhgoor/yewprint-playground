@@ -3,7 +3,7 @@ use yew_router::{
     agent::{RouteAgentDispatcher, RouteRequest},
     Switch,
 };
-use yewprint::{Menu, MenuItem};
+use yewprint::{Button, Menu, MenuItem};
 
 pub struct NavMenu {
     link: ComponentLink<Self>,
@@ -49,7 +49,19 @@ impl Component for NavMenu {
                         onclick=self.link
                             .callback(|_| Msg::GoToMenu(AppMenu::Page))
                     />
+                    <MenuItem
+                        text={html!("Test")}
+                        href="#test"
+                        onclick=self.link
+                            .callback(|_| Msg::GoToMenu(AppMenu::Test))
+                    />
                 </Menu>
+                <Button
+                    class="nav-button"
+                    fill=true
+                >
+                    {"Ready?"}
+                </Button>
             </div>
         }
     }
@@ -59,6 +71,8 @@ impl Component for NavMenu {
 pub enum AppMenu {
     #[to = "/#page"]
     Page,
+    #[to = "/#test"]
+    Test,
     #[to = "/"]
     Home,
 }
