@@ -1,3 +1,4 @@
+use crate::forms::*;
 use crate::nav_menu::*;
 use crate::page::*;
 use yew::prelude::*;
@@ -50,6 +51,7 @@ impl Component for App {
                                 match switch {
                                     AppMenu::Page | AppMenu::Home =>
                                         html! (<Page />),
+                                    AppMenu::Forms => html! (<Forms />),
                                 }
                             })
                         />

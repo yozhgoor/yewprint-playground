@@ -1,6 +1,7 @@
 #![cfg(target_arch = "wasm32")]
 
 mod app;
+mod forms;
 mod nav_menu;
 mod page;
 

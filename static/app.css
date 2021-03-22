@@ -33,3 +33,108 @@ body{
     padding: 20px;
     background-color: #293641;
 }
+
+.forms-header{
+    border-bottom: 3px Solid grey;
+    margin-right: 20%;
+}
+
+.forms-section{
+    margin-top: 10px;
+}
+
+.forms-section-content{
+    display: flex;
+    flex-direction: column;
+}
+
+.forms-content-title{
+    margin-top: 20px;
+}
+
+.forms-name{
+    display: flex;
+    margin-right: 50px;
+}
+
+.forms-birth{
+    display: flex;
+}
+
+.forms-adress{
+    display: flex;
+}
+
+.forms-location{
+    display: flex;
+}
+
+.forms-contact{
+    display: flex;
+}
+
+.forms-education{
+    display: flex;
+}
+
+.forms-input{
+    display: flex;
+    flex-direction: column;
+}
+
+.forms-label{
+    margin-right: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.forms-field{
+    margin-right: 25px;
+}
+
+.forms-select{
+    margin-right: 25px;
+}
+
+.forms-horizontal-section{
+    display: flex;
+    margin-top: 25px;
+}
+
+.second-horizontal-element{
+    margin-left: 50px;
+}
+
+.third-horizontal-element{
+    margin-left: 50px;
+}
+
+.forms-footer{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+    margin-right: 20%;
+    border-top: 1.5px Solid grey;
+}
+
+.forms-button{
+    margin-top: 5px;
+}
+
+.forms-section-header{
+    display: flex;
+}
+
+.forms-section-icon{
+    margin-top: 6px;
+    margin-right: 6px;
+}
+
+.forms-content-header{
+    display: flex;
+}
+
+.forms-content-icon{
+    margin-top: 22px;
+    margin-right: 10px;
+}
