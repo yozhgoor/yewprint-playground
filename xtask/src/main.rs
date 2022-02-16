@@ -25,10 +25,11 @@ fn main() -> Result<()> {
                     .app_name("yewprint-playground")
                     .run("yewprint-playground")?;
 
-                xtask_wasm::WasmOpt::level(1).shrink(2).optimize(result.wasm)?;
+                xtask_wasm::WasmOpt::level(1)
+                    .shrink(2)
+                    .optimize(result.wasm)?;
             } else {
-                arg
-                    .static_dir_path("yewprint-playground/static")
+                arg.static_dir_path("yewprint-playground/static")
                     .app_name("yewprint-playground")
                     .run("yewprint-playground")?;
             }
