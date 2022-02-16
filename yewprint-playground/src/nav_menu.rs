@@ -1,3 +1,4 @@
+use std::borrow::Cow;
 use yew::prelude::*;
 use yew_router::{
     agent::{RouteAgentDispatcher, RouteRequest},
@@ -45,13 +46,13 @@ impl Component for NavMenu {
                 <Menu>
                     <MenuItem
                         text={html!("Page")}
-                        href="#page"
+                        href=Cow::Borrowed("#page")
                         onclick=self.link
                             .callback(|_| Msg::GoToMenu(AppMenu::Page))
                     />
                     <MenuItem
                         text={html!("Forms")}
-                        href="#forms"
+                        href=Cow::Borrowed("#forms")
                         onclick=self.link
                             .callback(|_| Msg::GoToMenu(AppMenu::Forms))
                     />

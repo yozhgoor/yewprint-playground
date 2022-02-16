@@ -27,15 +27,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "ansi_term"
-version = "0.12.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d52a9bb7ec0cf484c551830a7ce27bd20d67eac647e1befb56b0be4ee39a55d2"
-dependencies = [
- "winapi 0.3.9",
-]
-
-[[package]]
 name = "anyhow"
 version = "1.0.53"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -252,21 +243,6 @@ checksum = "8100e46ff92eb85bf6dc2930c73f2a4f7176393c84a9446b3d501e1b354e7b34"
 
 [[package]]
 name = "clap"
-version = "2.34.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a0610544180c38b88101fecf2dd634b174a62eef6946f84dfc6a7127512b381c"
-dependencies = [
- "ansi_term",
- "atty",
- "bitflags",
- "strsim 0.8.0",
- "textwrap 0.11.0",
- "unicode-width",
- "vec_map",
-]
-
-[[package]]
-name = "clap"
 version = "3.0.14"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "b63edc3f163b3c71ec8aa23f9bd6070f77edbf3d1d198b164afa90ff00e4ec62"
@@ -277,9 +253,9 @@ dependencies = [
  "indexmap",
  "lazy_static",
  "os_str_bytes",
- "strsim 0.10.0",
+ "strsim",
  "termcolor",
- "textwrap 0.14.2",
+ "textwrap",
 ]
 
 [[package]]
@@ -1143,39 +1119,9 @@ checksum = "a2eb9349b6444b326872e140eb1cf5e7c522154d69e7a0ffb0fb81c06b37543f"
 
 [[package]]
 name = "strsim"
-version = "0.8.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "8ea5119cdb4c55b55d432abb513a0429384878c15dde60cc77b1c99de1a95a6a"
-
-[[package]]
-name = "strsim"
 version = "0.10.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "73473c0e59e6d5812c5dfe2a064a6444949f089e20eec9a2e5506596494e4623"
-
-[[package]]
-name = "structopt"
-version = "0.3.26"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "0c6b5c64445ba8094a6ab0c3cd2ad323e07171012d9c98b0b15651daf1787a10"
-dependencies = [
- "clap 2.34.0",
- "lazy_static",
- "structopt-derive",
-]
-
-[[package]]
-name = "structopt-derive"
-version = "0.4.18"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "dcb5ae327f9cc13b68763b5749770cb9e048a99bd9dfdfa58d0cf05d5f64afe0"
-dependencies = [
- "heck 0.3.3",
- "proc-macro-error",
- "proc-macro2",
- "quote",
- "syn",
-]
 
 [[package]]
 name = "syn"
@@ -1236,15 +1182,6 @@ dependencies = [
 
 [[package]]
 name = "textwrap"
-version = "0.11.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d326610f408c7a4eb6f51c37c330e496b08506c9457c9d34287ecc38809fb060"
-dependencies = [
- "unicode-width",
-]
-
-[[package]]
-name = "textwrap"
 version = "0.14.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "0066c8d12af8b5acd21e00547c3797fde4e8677254a7ee429176ccebbe93dd80"
@@ -1287,12 +1224,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "7e8820f5d777f6224dc4be3632222971ac30164d4a258d595640799554ebfd99"
 
 [[package]]
-name = "unicode-width"
-version = "0.1.9"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3ed742d4ea2bd1176e236172c8429aaf54486e7ac098db29ffe6529e0ce50973"
-
-[[package]]
 name = "unicode-xid"
 version = "0.2.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1303,12 +1234,6 @@ name = "vcpkg"
 version = "0.2.15"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "accd4ea62f7bb7a82fe23066fb0957d48ef677f6eeb8215f372f52e48bb32426"
-
-[[package]]
-name = "vec_map"
-version = "0.8.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f1bddf1187be692e79c5ffeab891132dfb0f236ed36a43c7ed39f1165ee20191"
 
 [[package]]
 name = "version_check"
@@ -1736,38 +1661,11 @@ checksum = "ab96a9f1f1165b0cbd75d4ca567cf0470218430ebedec5d84f18b97a73d382ed"
 dependencies = [
  "anyhow",
  "cargo_metadata",
- "clap 3.0.14",
+ "clap",
  "lazy_static",
  "libc",
  "log",
  "notify",
-]
-
-[[package]]
-name = "yew"
-version = "0.17.4"
-source = "git+https://github.com/yewstack/yew.git?rev=db3170f629f#db3170f629fc91b15c68b12d4204d6f1394520f4"
-dependencies = [
- "anyhow",
- "anymap",
- "bincode",
- "cfg-if 1.0.0",
- "cfg-match",
- "console_error_panic_hook",
- "gloo",
- "http",
- "indexmap",
- "js-sys",
- "log",
- "ryu",
- "serde",
- "serde_json",
- "slab",
- "thiserror",
- "wasm-bindgen",
- "wasm-bindgen-futures",
- "web-sys",
- "yew-macro 0.17.0",
 ]
 
 [[package]]
@@ -1795,19 +1693,7 @@ dependencies = [
  "wasm-bindgen",
  "wasm-bindgen-futures",
  "web-sys",
- "yew-macro 0.18.0",
-]
-
-[[package]]
-name = "yew-macro"
-version = "0.17.0"
-source = "git+https://github.com/yewstack/yew.git?rev=db3170f629f#db3170f629fc91b15c68b12d4204d6f1394520f4"
-dependencies = [
- "boolinator",
- "lazy_static",
- "proc-macro2",
- "quote",
- "syn",
+ "yew-macro",
 ]
 
 [[package]]
@@ -1825,8 +1711,9 @@ dependencies = [
 
 [[package]]
 name = "yew-router"
-version = "0.14.0"
-source = "git+https://github.com/yewstack/yew.git?rev=db3170f629f#db3170f629fc91b15c68b12d4204d6f1394520f4"
+version = "0.15.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "27666236d9597eac9be560e841e415e20ba67020bc8cd081076be178e159c8bc"
 dependencies = [
  "cfg-if 1.0.0",
  "cfg-match",
@@ -1838,15 +1725,16 @@ dependencies = [
  "serde_json",
  "wasm-bindgen",
  "web-sys",
- "yew 0.17.4",
+ "yew",
  "yew-router-macro",
  "yew-router-route-parser",
 ]
 
 [[package]]
 name = "yew-router-macro"
-version = "0.14.0"
-source = "git+https://github.com/yewstack/yew.git?rev=db3170f629f#db3170f629fc91b15c68b12d4204d6f1394520f4"
+version = "0.15.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "4c0ace2924b7a175e2d1c0e62ee7022a5ad840040dcd52414ce5f410ab322dba"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -1856,8 +1744,9 @@ dependencies = [
 
 [[package]]
 name = "yew-router-route-parser"
-version = "0.14.0"
-source = "git+https://github.com/yewstack/yew.git?rev=db3170f629f#db3170f629fc91b15c68b12d4204d6f1394520f4"
+version = "0.15.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "de4a67208fb46b900af18a7397938b01f379dfc18da34799cfa8347eec715697"
 dependencies = [
  "nom",
 ]
@@ -1865,14 +1754,15 @@ dependencies = [
 [[package]]
 name = "yewprint"
 version = "0.1.1"
-source = "git+https://github.com/cecton/yewprint.git?branch=main#fd67f09ba5d4993ae54151e72706e198c02a9410"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "03d0ecc4f14bb2f2698480a402c94e71aaa66a3420a681f4f47a243a43988fc5"
 dependencies = [
  "heck 0.3.3",
  "id_tree",
  "regex",
  "wasm-bindgen",
  "web-sys",
- "yew 0.18.0",
+ "yew",
  "yewtil",
 ]
 
@@ -1881,10 +1771,11 @@ name = "yewprint-playground"
 version = "0.1.0"
 dependencies = [
  "console_error_panic_hook",
- "structopt",
+ "wasm-bindgen",
  "wasm-bindgen-test",
+ "web-sys",
  "wee_alloc",
- "yew 0.17.4",
+ "yew",
  "yew-router",
  "yewprint",
 ]
@@ -1899,7 +1790,7 @@ dependencies = [
  "wasm-bindgen",
  "wasm-bindgen-futures",
  "web-sys",
- "yew 0.18.0",
+ "yew",
  "yewtil-macro",
 ]
 
