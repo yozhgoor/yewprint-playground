@@ -1,5 +1,5 @@
 use std::process;
-use xtask_wasm::{anyhow::Result, clap};
+use xtask_wasm::{anyhow::Result, cargo_metadata, clap};
 
 #[derive(clap::Parser)]
 enum Opt {
@@ -18,6 +18,8 @@ fn main() -> Result<()> {
     match opt {
         Opt::Dist(arg) => {
             log::info!("Generating package...");
+
+            download_blueprint_css("yewprint-playground")?;
 
             if arg.release {
                 let result = arg
@@ -43,6 +45,17 @@ fn main() -> Result<()> {
         Opt::Start(arg) => {
             arg.arg("dist").start(xtask_wasm::default_dist_dir(false))?;
         }
+    }
+
+    Ok(())
+}
+
+fn download_blueprint_css(package: impl AsRef<std::path::Path>) -> Result<()> {
+    let css_path = package.as_ref().join("static").join("blueprint.css");
+
+    if !css_path.exists() {
+        log::info!("downloading blueprint's css in {}", &css_path.display());
+        yewprint_css::download_css(&css_path)?;
     }
 
     Ok(())
