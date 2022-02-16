@@ -61,9 +61,7 @@ fn download_blueprint_css(dest: impl AsRef<Path>) -> Result<()> {
         yewprint_css::download_css(&css_path)?;
     }
 
-    if !dest.as_ref().join("blueprint.css").exists() {
-        fs::copy(css_path, dest.as_ref().join("blueprint.css"))?;
-    }
+    fs::copy(css_path, dest.as_ref().join("blueprint.css"))?;
 
     Ok(())
 }
