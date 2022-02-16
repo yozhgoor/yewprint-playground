@@ -1,5 +1,5 @@
 use std::process;
-use xtask_wasm::{anyhow::Result, cargo_metadata, clap};
+use xtask_wasm::{anyhow::Result, clap};
 
 #[derive(clap::Parser)]
 enum Opt {
