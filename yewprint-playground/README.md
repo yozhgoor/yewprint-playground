@@ -2,7 +2,7 @@
 
 This repository is a [Yew](https://github.com/yewstack/yew) +
 [yewprint](https://github.com/cecton/yewprint) playground using
-[wasm-run](https://github.com/IMI-eRnD-Be/wasm-run).
+[xtask-wasm](https://github.com/rustminded/xtask-wasm).
 
 ## Development Server
 
