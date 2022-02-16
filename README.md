@@ -10,7 +10,14 @@ This repository is a [Yew](https://github.com/yewstack/yew) +
 cargo xtask start
 ```
 
-You can now go to http://localhost:3000
+You can now go to http://localhost:8000
+If you want to use another port, you can use the following:
+
+```
+cargo xtask start --port 3000
+```
+
+The IP address can be changed using the `--ip` flag.
 
 **Note:** when you make changes in the source code, you just have to reload the page
 to see your changes.
