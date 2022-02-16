@@ -7,7 +7,7 @@ This repository is a [Yew](https://github.com/yewstack/yew) +
 ## Development Server
 
 ```
-cargo run -- serve
+cargo xtask start
 ```
 
 You can now go to http://localhost:3000
@@ -15,17 +15,25 @@ You can now go to http://localhost:3000
 **Note:** when you make changes in the source code, you just have to reload the page
 to see your changes.
 
-## Production Build
+## Generate the distributed package without serving it
 
 ```
-cargo run -- build
+cargo xtask-dist
+```
+
+If you want to re-generate the package when you make changes in your source
+code, you can use the following:
+
+```
+cargo xtask watch
 ```
 
 ## Playground
 
 ### Menu Component
 
-If you want to configure the left component (with the logo and a menu for now) you can do this here:
+If you want to configure the left component (with the logo and a menu for now)
+you can do this here:
 
 [`src/nav_menu.rs`](https://github.com/Yozhgoor/yewprint-playground/blob/main/src/nav_menu.rs)
 
