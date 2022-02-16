@@ -1,6 +1,6 @@
-use std::process;
 use std::fs;
 use std::path::Path;
+use std::process;
 use xtask_wasm::{anyhow::Result, clap, metadata};
 
 #[derive(clap::Parser)]
@@ -33,7 +33,8 @@ fn main() -> Result<()> {
                     .shrink(2)
                     .optimize(result.wasm)?;
             } else {
-                let result = arg.static_dir_path("yewprint-playground/static")
+                let result = arg
+                    .static_dir_path("yewprint-playground/static")
                     .app_name("yewprint-playground")
                     .run("yewprint-playground")?;
 
