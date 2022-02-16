@@ -1,5 +1,7 @@
 use std::process;
-use xtask_wasm::{anyhow::Result, clap};
+use std::fs;
+use std::path::Path;
+use xtask_wasm::{anyhow::Result, clap, metadata};
 
 #[derive(clap::Parser)]
 enum Opt {
@@ -19,21 +21,23 @@ fn main() -> Result<()> {
         Opt::Dist(arg) => {
             log::info!("Generating package...");
 
-            download_blueprint_css("yewprint-playground")?;
-
             if arg.release {
                 let result = arg
                     .static_dir_path("yewprint-playground/static")
                     .app_name("yewprint-playground")
                     .run("yewprint-playground")?;
 
+                download_blueprint_css(result.dist_dir)?;
+
                 xtask_wasm::WasmOpt::level(1)
                     .shrink(2)
                     .optimize(result.wasm)?;
             } else {
-                arg.static_dir_path("yewprint-playground/static")
+                let result = arg.static_dir_path("yewprint-playground/static")
                     .app_name("yewprint-playground")
                     .run("yewprint-playground")?;
+
+                download_blueprint_css(result.dist_dir)?;
             }
         }
         Opt::Watch(arg) => {
@@ -50,12 +54,15 @@ fn main() -> Result<()> {
     Ok(())
 }
 
-fn download_blueprint_css(package: impl AsRef<std::path::Path>) -> Result<()> {
-    let css_path = package.as_ref().join("static").join("blueprint.css");
+fn download_blueprint_css(dest: impl AsRef<Path>) -> Result<()> {
+    let css_path = metadata().target_directory.join("blueprint.css");
 
     if !css_path.exists() {
-        log::info!("downloading blueprint's css in {}", &css_path.display());
         yewprint_css::download_css(&css_path)?;
+    }
+
+    if !dest.as_ref().join("blueprint.css").exists() {
+        fs::copy(css_path, dest.as_ref().join("blueprint.css"))?;
     }
 
     Ok(())
