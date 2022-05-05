@@ -2275,9 +2275,9 @@ dependencies = [
 
 [[package]]
 name = "yewprint-css"
-version = "0.1.1"
+version = "0.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c4dcc2743fcce432784f3a903fa0cf155bf1068b913c34c94ae8d7edd218d2eb"
+checksum = "6b87ea75b304803b19b5d9d9baae00fc194fdb9822211bbfdad2ce731c82fc35"
 dependencies = [
  "anyhow",
  "flate2",
